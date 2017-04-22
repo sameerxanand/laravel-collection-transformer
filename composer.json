@@ -1,0 +1,24 @@
+{
+    "name": "spawned/transformer",
+    "description": "CLI tool for generating transformer to transform collection(s) of data.",
+    "keywords": ["laravel", "transformer", "cli"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sameer Anand",
+            "email": "sanand@cs.stonybrook.edu"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Spawned\\Transformer\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.6.4",
+        "illuminate/support": "^5.4",
+        "illuminate/console": "^5.4"
+    },
+    "prefer-stable": true
+}
