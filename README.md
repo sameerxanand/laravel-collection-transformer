@@ -30,15 +30,15 @@ This will create `app\Transformers\UserTransformer.php`
 
 A generated transformer will look like this:
 ```php
-    class UserTransformer extends Transformer
+class UserTransformer extends Transformer
+{
+    public function transform($user)
     {
-        public function transform($user)
-        {
-            return [
-                'name'  => $user->first . ' ' . $user->last
-            ];
-        }
+        return [
+            'name'  => $user->first . ' ' . $user->last
+        ];
     }
+}
 ```
 
 Modify the returned array in the transform method to define how you want the data to be transformed.
@@ -48,21 +48,21 @@ Modify the returned array in the transform method to define how you want the dat
 You can transform a single item using the transform method. For example:
 
 ```php
-    public function show(User $user, UserTransformer $transformer)
-    {
-        return $transformer->transform($user);
-    }
+public function show(User $user, UserTransformer $transformer)
+{
+    return $transformer->transform($user);
+}
 ```
 
 You can transform a collection of items using the transformCollection method. For example:
 
 ```php
-    public function index(UserTransformer $transformer)
-    {
-        $users = User::all();
-        
-        $transformer->transformCollection($users);
-    }
+public function index(UserTransformer $transformer)
+{
+    $users = User::all();
+
+    $transformer->transformCollection($users);
+}
 ```
 
 ## License
