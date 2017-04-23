@@ -61,7 +61,7 @@ public function index(UserTransformer $transformer)
 {
     $users = User::all();
 
-    $transformer->transformCollection($users);
+    return $transformer->transformCollection($users);
 }
 ```
 
